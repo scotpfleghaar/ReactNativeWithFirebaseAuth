@@ -7,6 +7,8 @@ const Input = (props) => {
         <View style={ContainerStyle}>
             <Text style={LabelStyle}>{props.label}</Text>
             <TextInput
+                autoCorrect={false}
+                placeholder={props.placeholder}
                 value={props.value}
                 onChangeText={props.onChangeText}
                 style={InputStyle}
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
         height: 20,
         width: 100,
         borderBottomWidth: 1,
-        borderBottomColor: '#999'
+        borderBottomColor: '#b7b7b7'
     },
     LabelStyle: {
         fontSize: 18,
