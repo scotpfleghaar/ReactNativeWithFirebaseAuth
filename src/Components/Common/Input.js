@@ -2,13 +2,14 @@ import React from 'react';
 import {Text, StyleSheet, TextInput, View} from 'react-native';
 
 const Input = (props) => {
+    const {InputStyle, LabelStyle, ContainerStyle} = styles
     return (
-        <View>
-            <Text>{props.label}</Text>
+        <View style={ContainerStyle}>
+            <Text style={LabelStyle}>{props.label}</Text>
             <TextInput
                 value={props.value}
                 onChangeText={props.onChangeText}
-                style={{height: 20, width: 100}}
+                style={InputStyle}
             />
         </View>
 
@@ -16,7 +17,29 @@ const Input = (props) => {
 };
 
 const styles = StyleSheet.create({
-
+    InputStyle: {
+        color: '#000',
+        paddingRight: 5,
+        paddingLeft: 5,
+        fontSize: 18,
+        lineHeight: 23,
+        flex: 5,
+        height: 20,
+        width: 100,
+        borderBottomWidth: 1,
+        borderBottomColor: '#999'
+    },
+    LabelStyle: {
+        fontSize: 18,
+        paddingLeft: 20,
+        flex: 1
+    },
+    ContainerStyle: {
+        height: 40,
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
+    }
 });
 
 export {Input};
