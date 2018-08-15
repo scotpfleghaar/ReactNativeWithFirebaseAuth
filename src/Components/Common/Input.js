@@ -1,11 +1,15 @@
 import React from 'react';
-import {Text, StyleSheet, TextInput} from 'react-native';
+import {Text, StyleSheet, TextInput, View} from 'react-native';
 
 const Input = (props) => {
     return (
         <View>
             <Text>{props.label}</Text>
-            <TextInput/>
+            <TextInput
+                value={props.value}
+                onChangeText={props.onChangeText}
+                style={{height: 20, width: 100}}
+            />
         </View>
 
     )
