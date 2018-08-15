@@ -7,6 +7,7 @@ const Input = (props) => {
         <View style={ContainerStyle}>
             <Text style={LabelStyle}>{props.label}</Text>
             <TextInput
+                secureTextEntry={!!props.secureTextEntry}
                 autoCorrect={false}
                 placeholder={props.placeholder}
                 value={props.value}
@@ -25,11 +26,11 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         fontSize: 18,
         lineHeight: 23,
-        flex: 5,
+        flex: 2,
         height: 20,
         width: 100,
         borderBottomWidth: 1,
-        borderBottomColor: '#b7b7b7'
+        borderBottomColor: '#d4d4d4'
     },
     LabelStyle: {
         fontSize: 18,
