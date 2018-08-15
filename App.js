@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import firebase from 'firebase';
 import {StyleSheet, Text, View} from 'react-native';
 import {Header} from './src/Components/Common';
+import LoginForm from './src/Components/LoginForm';
 
 
 type Props = {};
@@ -22,6 +23,7 @@ export default class App extends Component<Props> {
         return (
             <View>
                 <Header headerText="Authentication"/>
+                <LoginForm/>
             </View>
         );
     }
