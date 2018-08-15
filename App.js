@@ -7,6 +7,10 @@ import LoginForm from './src/Components/LoginForm';
 
 type Props = {};
 export default class App extends Component<Props> {
+    state = {
+        isLoggedIn: false
+    };
+
     componentWillMount() {
         // Initialize Firebase
         firebase.initializeApp({
@@ -17,6 +21,15 @@ export default class App extends Component<Props> {
             storageBucket: "reactauthenticationapp.appspot.com",
             messagingSenderId: "908900560010"
         });
+
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({isLoggedIn: true})
+            } else {
+                this.setState({isLoggedIn: false})
+            }
+        })
     }
 
     render() {
