@@ -9,13 +9,17 @@ class LoginForm extends Component {
         password: '',
         error: ''
     };
+
     onButtonPress = () => {
+        console.log("Here");
         const {email, password} = this.state;
         firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-
+            this.setState({error: ''});
+            console.log("Worked")
         }).catch(() => {
             firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-
+                this.setState({error: ''});
+                console.log("[CREATED] Worked")
             }).catch((error) => {
                 this.setState({error: error.message})
             })
@@ -47,7 +51,7 @@ class LoginForm extends Component {
                     {this.state.error}
                 </Text>
                 <CardSection>
-                    <Button onPress={this.onButtonPress()}>
+                    <Button onPress={this.onButtonPress}>
                         Log In/Sign Up
                     </Button>
                 </CardSection>
